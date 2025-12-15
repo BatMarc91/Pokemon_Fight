@@ -1,0 +1,30 @@
+# Entorn virtual
+venv/
+.env/
+
+# Fitxers temporals de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fitxers de configuració locals
+*.env
+*.sqlite3
+*.db
+
+# Fitxers de sistema
+.DS_Store
+Thumbs.db
+
+# Fitxers de logs
+*.log
+
+# Carpetes de l'editor
+.vscode/
+.idea/
+
+# Fitxers de compilació
+build/
+dist/
+*.egg-info/
