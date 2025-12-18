@@ -6,4 +6,5 @@ marc_team = ["Electabuzz", "Typhlosion", "Umbreon", "Lapras", "Dragonite", "Alak
 
 team_proves = ["Zapdos", "Espeon", "Cacturne", "Exploud", "Golem", "Metagross"]
 
+
 # Puc fer 3 nivells de dificultat (més endavant)

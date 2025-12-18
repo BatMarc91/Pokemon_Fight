@@ -1,5 +1,5 @@
 # Entorn virtual
-venv/
+.venv/
 .env/
 
 # Fitxers temporals de Python
