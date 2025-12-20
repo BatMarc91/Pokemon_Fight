@@ -4,22 +4,7 @@ from env import marc_team, team_proves
 from stats import pokemon_stats
 from search_pokemon import search_pokemon
 
-def get_team_stats(team: list):
-    """Retornar json amb l'equip"""
-    pokemon_team = {}
-    position = 0
-
-    for pokemon in team:
-        position = position + 1
-        pokemon_team[f"{position}"] = pokemon_stats(pokemon)
-    
-    return pokemon_team
-        
-
-#print(get_team_stats(marc_team))
-#print(get_team(team_proves))
-
-def select_team():
+def create_team():
     """Funció que genera un equip de 6 pokemon i les seues estadístiques"""
     i = 1
     team_list = []

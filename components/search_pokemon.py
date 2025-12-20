@@ -1,5 +1,5 @@
 import requests
-from env import url
+from data.env import url
 
 def search_pokemon(pokemon_name: str):
     consulta = requests.get(f"{url}/pokemon/{pokemon_name.lower()}")
