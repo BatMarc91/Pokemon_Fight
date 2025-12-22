@@ -2,9 +2,17 @@
 url = "https://pokeapi.co/api/v2"
 
 # Defineixo els noms del meu equip pokemon
-marc_team = ["Electabuzz", "Typhlosion", "Umbreon", "Lapras", "Dragonite", "Alakazam"]
+    # Puc fer 3 nivells de dificultat (més endavant)
+marc_beginner = ["Luxray", "Typhlosion", "Treecko", "Poliwrath", "Dragonite", "Hypno"]
 
-team_proves = ["Zapdos", "Espeon", "Cacturne", "Exploud", "Golem", "Metagross"]
+marc_mid = ["Electabuzz", "Arcanine", "Umbreon", "Lapras", "Lucario", "Alakazam"]
+
+marc_expert = ["Lugia", "Charizard", "Dragonite", "Tyranitar", "Espeon", "Zapdos"]
+
+team_proves = ["Gyarados", "Jolteon", "Heracross", "Gardevoir", "Sneasel", "Magnezone"]
 
 
-# Puc fer 3 nivells de dificultat (més endavant)
+
+
+
+

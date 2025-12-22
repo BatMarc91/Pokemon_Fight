@@ -1,16 +1,18 @@
 import requests
 from data.env import url
-from models.models import PokemonModel
+from models.models import PokemonModel, PokemonStats
+from models.battle import PokemonInBattle
 
 # Funció definir stats dels pokemons
-def pokemon_stats(pokemon_name: str):
+def pokemon_stats(team_name: str, pokemon_name: str):
     consulta = requests.get(f"{url}/pokemon/{pokemon_name.lower()}")
 
     if consulta.status_code == 200:
         # Em guardo a un json tota la información del pokemon
         json_pokemon = consulta.json()
 
-        return PokemonModel(
+        return PokemonStats(
+            team_name = team_name,
             name = pokemon_name,
             hp = json_pokemon["stats"][0]["base_stat"],
             attack = json_pokemon["stats"][1]["base_stat"],
@@ -23,4 +25,19 @@ def pokemon_stats(pokemon_name: str):
     else:
         return "Error"
 
-#print(pokemon_stats("Umbreon"))
+
+def initial_stats(pokemon: PokemonModel):
+    stats_in_battle = pokemon_stats(pokemon.team_name, pokemon.name)
+
+    stats_in_battle = PokemonInBattle(
+        team_name=stats_in_battle.team_name,
+        name=stats_in_battle.name,
+        hp=stats_in_battle.hp,
+        attack=stats_in_battle.attack,
+        defense=stats_in_battle.defense,
+        special_attack=stats_in_battle.special_attack,
+        special_defense=stats_in_battle.special_defense,
+        speed=stats_in_battle.speed
+    )
+
+    return stats_in_battle

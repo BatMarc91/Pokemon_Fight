@@ -1,6 +1,6 @@
 import random
 
-from env import marc_team, team_proves
+from data.env import marc_team, team_proves
 from stats import pokemon_stats
 from search_pokemon import search_pokemon
 
