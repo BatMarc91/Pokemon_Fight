@@ -2,53 +2,30 @@ from data.env import marc_beginner, marc_mid, marc_expert
 from components.search_pokemon import search_pokemon
 from models.models import PokemonModel, TeamModel, FightModel
 from components.generate_fight import generate_fight
+from narrativa_game.narrativa import intro
 
-
-marc_team = TeamModel(name="Equip de Marc", pokemons=marc_mid)
+# Introducció i selecció d'equips
+user_team = intro()
 
 print(f"""
-Benvingut al joc de combats de Pokemon. 
-    Avui desafiaràs a Marc i el seu equip Pokemon:
-        - {marc_team}
-""")
+    Genial, aquí tens el teu equip: {user_team})
+    -------------------------------------------
+    """)
 
+for pokemon in marc_team:
+    print(f"  • {pokemon}")
 
-print("Tria un nom per al teu equip de 6 Pokemon")
-user_team_name = input("")
+print("""
+    -------------------------------------------
+    """)
 
-i = 1
-user_list = []
-
-while i < 7:
-    pokemon = input(f"""
-                            *** (Fica una X si vols tancar)
-                    Ara tria el Pokemon nº {i} -->  
-                    """)
-
-    if pokemon == "X":
-        exit()
-    
-    # Comprovar si el pokemon existeix per ficar-lo a l'equip corresponent
-    pokemon_found = search_pokemon(pokemon)
-
-    if not pokemon_found:
-        "No has escrit bé el pokemon, torna a intentar-ho."
-    
-    else:
-        i = i + 1 # seguir avançant amb el bucle
-
-        # Afegir cada pokemon a la llista de l'equip
-        user_list.append(pokemon)
-
-user_team = TeamModel(name = user_team_name, pokemons= user_list)
-
-print(f"Genial, aquí tens el teu equip: {user_team}")
-
-print("Anem a fer el sorteig.......................")
+print("Ara anem a fer el sorteig de cada un dels 6 enfrontaments")
 
 sorteig = generate_fight(marc_team, user_team)
 
-print(sorteig)
+for fight in sorteig:
+    print(f"  • {fight}")
+
 
 
 
