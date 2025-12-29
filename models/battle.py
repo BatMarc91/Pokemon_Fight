@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from data.formules import calculate_speed, calculate_physical_damage, calculate_physical_defense
 
 class PokemonInBattle():
@@ -22,3 +23,10 @@ class PokemonInBattle():
     def defense_damage(self):
         defense = calculate_physical_defense(self.defense)
         return defense
+
+class BattleResults(BaseModel):
+    turn: int
+    pokemon_winner: str
+    team_one_wins: bool
+    hp_winners: int
+    points_winner: int

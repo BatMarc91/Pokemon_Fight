@@ -20,7 +20,7 @@ def generate_fight(team_one: TeamModel, team_two: TeamModel):
         num_two = int(positions_two[position])
 
         pokemon_one = team_one.pokemons[num_one]
-        pokemon_two = team_one.pokemons[num_two]
+        pokemon_two = team_two.pokemons[num_two]
 
         # Això hauria de ser un FightModel
         fight = FightModel(
@@ -41,11 +41,6 @@ def generate_fight(team_one: TeamModel, team_two: TeamModel):
         
         position = position + 1
         num_fight = num_fight + 1
-
-        #fights[f"fight{num_fight}"] = {
-        #            "pokemon_one" : team_one.pokemons[num_one],
-        #            "pokemon_two" : team_two.pokemons[num_two]
-        #            }
     
     # Això hauria de ser una llista de FightModel
     return fights

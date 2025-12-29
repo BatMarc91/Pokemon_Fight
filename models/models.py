@@ -26,3 +26,6 @@ class FightModel(BaseModel):
     pokemon_two: PokemonModel
 
 
+
+
+
