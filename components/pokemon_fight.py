@@ -100,8 +100,8 @@ def battle(pokemon_one: PokemonModel, pokemon_two: PokemonModel):
         pokemon_winner = pokemon_two.name
         team_one_wins= False
         initial_hp = initial_hp_two
-        final_hp = hp_one
-        hp_winners = hp_one
+        final_hp = hp_two
+        hp_winners = hp_two
         points_earned = calculate_points(final_hp, initial_hp)
 
     battle_results = BattleResults(turn=torn, pokemon_winner=pokemon_winner, team_one_wins=team_one_wins, hp_winners=hp_winners, points_winner=points_earned)   
